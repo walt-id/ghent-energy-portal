@@ -136,7 +136,7 @@ export default {
 
     },
     GHENT_PORTAL: {
-        WELCOME: "Welcome to Ghent Energy Portal",
+        WELCOME: "Welcome to Ghent Citizen Portal",
         CHOOSE_ACTION: "Where do you want to go?",
         SIGNUP: {
             CLAIM_VERIFIABLE_ID: "Claim Verifiable ID credential",
