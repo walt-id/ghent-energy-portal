@@ -134,5 +134,25 @@ export default {
         ACHIEVMENT_CRITERIA_TYPE:"Criteria Type",
         ACHIEVMENT_CRITERIA_narrative:"Criteria narrative"
 
+    },
+    GHENT_PORTAL: {
+        WELCOME: "Welcome to Ghent Energy Portal",
+        CHOOSE_ACTION: "Where do you want to go?",
+        SIGNUP: {
+            CLAIM_VERIFIABLE_ID: "Claim Verifiable ID credential",
+            ENTER_PERSONAL_ID: "Enter your personal identification number:",
+            CITIZEN_DATA: "Citizen data"
+        },
+        WEB_WALLET: "Web Wallet",
+        CITIZEN: {
+            personalIdentifier: "Personal Identifier",
+            firstName: "First Name",
+            familyName: "Family Name",
+            gender: "Gender",
+            currentAddress: "Current Address",
+            dateOfBirth: "Date of Birth",
+            nameAndFamilyNameAtBirth: "Name at Birth",
+            placeOfBirth: "Place of Birth"
+        }
     }
 }
