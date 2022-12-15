@@ -45,7 +45,8 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -58,7 +59,8 @@ export default {
     '/issuer-api/': 'https://wallet.walt-test.cloud',
     '/onboarding-api/': 'https://wallet.walt-test.cloud',
     '/api/': 'https://wallet.walt-test.cloud',
-    '/ghent/': 'https://integrations.walt-test.cloud'
+    '/ghent/': 'http://localhost:5555'
+    //'/ghent/': 'https://integrations.walt-test.cloud'
     //'/issuer-api/': 'http://localhost:8080/',
     //'/onboarding-api/': 'http://localhost:8080/',
     //'/api/': 'http://localhost:8080/'
@@ -97,5 +99,23 @@ export default {
   ssr: false,
   server: {
     port: 8000
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          // required: true,
+          type: 'Bearer'
+        },
+        user: false,
+        endpoints: {
+          login: { url: '/ghent/portal/authorize/token', method: 'post' },
+          user: { url: '/api/auth/user', method: 'get' }
+        }
+      }
+    }
   }
 }

@@ -12,7 +12,7 @@
           <div>
             <div>
               <div class="my-2"><nuxt-link to="GhentSignup" class="btn btn-primary py-2 px-5">Get your VerifiableId credential</nuxt-link></div>
-              <div class="my-2"><button class="btn btn-primary py-2 px-5">Sign in to Energy Portal</button></div>
+              <div class="my-2"><nuxt-link to="GhentPortal" class="btn btn-primary py-2 px-5">Go to Ghent Portal</nuxt-link></div>
             </div>
           </div>
         </div>

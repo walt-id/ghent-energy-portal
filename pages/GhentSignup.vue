@@ -83,9 +83,10 @@ export default {
       } else {
         this.btnLoading = false;
         this.$bvModal.show("qr-modal")
+        this.walletUrl = await this.$axios.$get(`/ghent/signup/issue/${this.personalID}`, { params: params })
         new QRious({
         element: document.getElementById('qr-code'),
-          value: await this.$axios.$get(`/ghent/signup/issue/${this.personalID}`, { params: params }),
+          value: walletUrl,
           size: 300
         })
       }
