@@ -38,6 +38,12 @@ export default {
         value: this.xDeviceInfo.url,
         size: 300
       })
+    setInterval(() => {
+      const verificationResult = this.$axios.$get("/ghent/portal/authorize/isVerified?state="+this.xDeviceInfo.state)
+      if(verificationResult.verified) {
+        this.$router.replace(verificationResult.url)
+      }
+    }, 2000);
   }
 }
 </script>

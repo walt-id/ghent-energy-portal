@@ -1,0 +1,26 @@
+[
+  {
+    "currentAddress": [
+      "1 Main Street, Ghent"
+    ],
+    "dateOfBirth": "1993-04-08",
+    "familyName": "STAMPLER",
+    "firstName": "Severin",
+    "gender": "MALE",
+    "nameAndFamilyNameAtBirth": "Severin STAMPLER",
+    "personalIdentifier": "0904008084H",
+    "placeOfBirth": "GHENT, BELGIUM"
+  },
+  {
+    "currentAddress": [
+      "1 Side Street, Ghent"
+    ],
+    "dateOfBirth": "1993-04-08",
+    "familyName": "POTISK",
+    "firstName": "Philipp",
+    "gender": "MALE",
+    "nameAndFamilyNameAtBirth": "Philipp POTISK",
+    "personalIdentifier": "123456789P",
+    "placeOfBirth": "GHENT, BELGIUM"
+  }
+]

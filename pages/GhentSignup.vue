@@ -86,7 +86,7 @@ export default {
         this.walletUrl = await this.$axios.$get(`/ghent/signup/issue/${this.personalID}`, { params: params })
         new QRious({
         element: document.getElementById('qr-code'),
-          value: walletUrl,
+          value: this.walletUrl,
           size: 300
         })
       }

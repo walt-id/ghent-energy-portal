@@ -1,4 +1,5 @@
 <template>
+<section class="py-5 text-center container">
   <div>
     <h1>Welcome to Ghent Portal</h1>
     <p>
@@ -26,6 +27,7 @@
       </div>
     </b-modal>
   </div>
+</section>
 </template>
 	
 <script>
