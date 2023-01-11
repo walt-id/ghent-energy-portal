@@ -36,12 +36,13 @@ export default {
     new QRious({
         element: document.getElementById('qr-code'),
         value: this.xDeviceInfo.url,
-        size: 300
+        size: 400
       })
-    setInterval(() => {
-      const verificationResult = this.$axios.$get("/ghent/portal/authorize/isVerified?state="+this.xDeviceInfo.state)
+    setInterval(async () => {
+      const verificationResult = await this.$axios.$get("/ghent/portal/authorize/isVerified?state="+this.xDeviceInfo.state)
+      console.log("Verification result", verificationResult)
       if(verificationResult.verified) {
-        this.$router.replace(verificationResult.url)
+        window.location = verificationResult.url
       }
     }, 2000);
   }
