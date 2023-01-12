@@ -60,7 +60,7 @@ export default {
     '/onboarding-api/': 'https://wallet.walt-test.cloud',
     '/api/': 'https://wallet.walt-test.cloud',
     //'/ghent/': 'http://localhost:5555'
-    '/ghent/': 'https://integrations.walt-test.cloud'
+    '/ghent/': 'https://bosa.walt-test.cloud'
     //'/issuer-api/': 'http://localhost:8080/',
     //'/onboarding-api/': 'http://localhost:8080/',
     //'/api/': 'http://localhost:8080/'
