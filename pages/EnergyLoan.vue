@@ -33,7 +33,7 @@
 <script>
 import QRious from "qrious"
 export default {
-  name: 'GhentPortal',
+  name: 'EnergyLoan',
   middleware: [ 'portal-login', 'auth' ],
   data() { return {
     walletUrl: null

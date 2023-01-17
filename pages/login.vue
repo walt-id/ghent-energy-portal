@@ -1,17 +1,17 @@
 <template>
-<section class="py-5 text-center container">
-  <div>
-    <div><b>Scan to present VerifiableId with your wallet:</b></div>
-    <div class="text-center">
-      <canvas :id="'qr-code'" />
-      <div class="py-2"><b>Present with:</b></div>
-      <div class="text-center small">
+<div class="max-w-4xl px-8 mx-auto text-gray-700">
+  <div class="bg-white bg-opacity-90 py-8 px-4 rounded">
+    <div class="max-w-3xl mx-auto py-12 bg-white px-8 rounded">
+      <div class="text-center"><b>Scan with your wallet, to present the required credentials:</b></div>
+      <canvas class="mx-auto" :id="'qr-code'" />
+      <div class="mx-auto text-center"><b>Present with:</b></div>
+      <div class="text-center small mx-auto">
         <a :href="xDeviceInfo.url"><i class="bi bi-app-indicator px-2"></i>{{$t('WALLET_APP')}}</a><br/>
         <a  :href="'/ghent/portal/authorize?webUrl='+webUrl"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
       </div>
     </div>
   </div>
-</section>
+</div>
 </template>
 	
 <script>

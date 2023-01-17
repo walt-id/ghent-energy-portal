@@ -18,6 +18,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "@/assets/css/app.css",
     "@/assets/css/core.css",
     "@/assets/css/animate.min.css",
     "@/assets/css/animations.css",
@@ -26,23 +27,20 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/bootstrap',
-    '@/plugins/bootstrap-script'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  /*buildModules: [
+  buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
-  ],*/
+    //'@nuxtjs/eslint-module'
+    '@nuxt/postcss8'
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/i18n',
@@ -93,7 +91,13 @@ export default {
   build: {
     babel: {
       compact: true
-    }
+    },
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
   },
 
   ssr: false,
@@ -117,5 +121,5 @@ export default {
         }
       }
     }
-  }
+  },
 }
