@@ -1,7 +1,6 @@
 <template>
 <div class="max-w-4xl px-8 mx-auto text-gray-700">
-  <div class="fixed inset-0 -z-10">
-    <img src="../assets/img/bg.jpg" class="object-cover" />
+  <div class="fixed inset-0 -z-10 bg-image">
   </div>
   <div class="flex h-16 items-center mt-8 mb-4">
     <img class="object-contain h-16" src="../assets/img/logo.png" />
@@ -32,5 +31,8 @@ export default {
 }
 </script>
 <style>
-
+.bg-image {
+  background-image: url(../assets/img/bg.jpg);
+  background-size: cover;
+}
 </style>

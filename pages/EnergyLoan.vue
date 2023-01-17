@@ -1,33 +1,21 @@
 <template>
-<section class="py-5 text-center container">
-  <div>
-    <h1>Welcome to Ghent Portal</h1>
-    <p>
-      <table class="table">
-              <tbody>
-                <tr v-for="(value, key) in citizen" :key="key">
-                  <th scope="row">{{$t("GHENT_PORTAL.CITIZEN." + key)}}</th>
-                  <td>{{value}}</td>
-                </tr>
-              </tbody>
-            </table>
-    </p>
+<div class="bg-white bg-opacity-90 py-8 px-4 rounded">
+  <div class="max-w-3xl mx-auto py-12 bg-white px-8 rounded">
+    <h1 class="text-2xl font-bold mb-4">Welcome {{ citizen.firstName }}!</h1>
+    
     <div>
-      <button @click="goToWallet('x-device', 'ProofOfResidence')" class="btn btn-primary py-2 px-5">Issue <b>Proof of residence</b> credential</button>
-    </div>
-    <b-modal id="qr-modal" :static="true" centered>
-      <div><b>{{$t('SCAN_TO_ISSUE')}}:</b></div>
+      <div class="text-center"><h2 class="text-lg font-semibold mb-4 mt-2">Scan with your wallet, to claim your energy loan:</h2></div>
       <div class="text-center" :v-show="qr-code-visible">
-        <canvas :id="'qr-code'" />
-        <div class="py-2"><b>{{$t('ISSUE_TO')}}:</b></div>
+        <canvas class="mx-auto" :id="'qr-code'" />
+        <div class="py-2"><h2 class="text-lg font-semibold mb-4 mt-2">{{$t('ISSUE_TO')}}:</h2></div>
         <div class="text-center small">
           <a :href="walletUrl"><i class="bi bi-app-indicator px-2"></i>{{$t('WALLET_APP')}}</a><br/>
-          <a @click="goToWallet('walt.id', 'ProofOfResidence')" href="#"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
+          <a :href="goToWalletUrl('walt.id')" target="_blank"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
         </div>
       </div>
-    </b-modal>
+    </div>
   </div>
-</section>
+</div>
 </template>
 	
 <script>
@@ -39,35 +27,32 @@ export default {
     walletUrl: null
   }},
 	async asyncData ({ $axios, query, $auth }) {
+    //$auth.setUser({id: "0904008084H"})
     console.log($auth.user.id)
-    const citizen = await $axios.$get("/ghent/portal/citizen/"+$auth.user.id)
-    return { citizen }
+    const citizen = await $axios.$get(`/ghent/portal/citizen/${$auth.user.id}`)
+    const params = { "walletId": "x-device", "isPreAuthorized": true, "userPin": null }
+    const walletUrl = await $axios.$get(`/ghent/portal/issue/${citizen.personalIdentifier}/EnergyLoan`, { params: params })
+    return { citizen, walletUrl }
   },
   computed: {
     personalID() {
       return this.citizen.personalIdentifier
-    }
+    },
   },
   methods: {
-    async goToWallet (walletId, type) {
-      this.btnLoading = true;
-      console.log("Citizen data:", this.citizen)
+    goToWalletUrl (walletId) {
       const params = { "walletId": walletId, "isPreAuthorized": true, "userPin": null }
-      if(walletId != "x-device") {
-        window.location = `/ghent/portal/issue/${this.personalID}/${type}?${Object.keys(params)
+      return `/ghent/portal/issue/${this.personalID}/EnergyLoan?${Object.keys(params)
           .filter(k => params[k] != null)
           .map(k => `${k}=${params[k]}`).join("&")}`
-      } else {
-        this.btnLoading = false;
-        this.$bvModal.show("qr-modal")
-        this.walletUrl = await this.$axios.$get(`/ghent/portal/issue/${this.personalID}/${type}`, { params: params })
-        new QRious({
+    },
+  },
+  mounted() {
+    new QRious({
         element: document.getElementById('qr-code'),
           value: this.walletUrl,
           size: 300
         })
-      }
-    },
   }
 }
 </script>
