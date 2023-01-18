@@ -117,7 +117,8 @@ export default {
         user: false,
         endpoints: {
           login: { url: '/ghent/portal/authorize/token', method: 'post' },
-          user: { url: '/api/auth/user', method: 'get' }
+          user: { url: '/ghent/portal/citizen', method: 'get' },
+          logout: false
         }
       }
     }

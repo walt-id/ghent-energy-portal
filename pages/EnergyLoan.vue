@@ -12,6 +12,7 @@
           <a :href="walletUrl"><i class="bi bi-app-indicator px-2"></i>{{$t('WALLET_APP')}}</a><br/>
           <a :href="goToWalletUrl('walt.id')" target="_blank"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
         </div>
+        <button style="background-color: #c01010" class="text-white px-4 py-2 inline-block font-semibold rounded mt-6 text-lg" @click="logout"><i class="bi bi-box-arrow-right"></i> Exit</button>
       </div>
     </div>
   </div>
@@ -27,9 +28,7 @@ export default {
     walletUrl: null
   }},
 	async asyncData ({ $axios, query, $auth }) {
-    //$auth.setUser({id: "0904008084H"})
-    console.log($auth.user.id)
-    const citizen = await $axios.$get(`/ghent/portal/citizen/${$auth.user.id}`)
+    const citizen = await $axios.$get("/ghent/portal/citizen")
     const params = { "walletId": "x-device", "isPreAuthorized": true, "userPin": null }
     const walletUrl = await $axios.$get(`/ghent/portal/issue/${citizen.personalIdentifier}/EnergyLoan`, { params: params })
     return { citizen, walletUrl }
@@ -46,6 +45,9 @@ export default {
           .filter(k => params[k] != null)
           .map(k => `${k}=${params[k]}`).join("&")}`
     },
+    logout() {
+      this.$auth.logout()
+    }
   },
   mounted() {
     new QRious({

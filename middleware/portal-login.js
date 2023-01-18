@@ -7,6 +7,7 @@ export default async function (context) {
           }
         })
         console.log("Logged in", loginResponse)
-        return await context.$auth.setUser(loginResponse.data)
+        await context.$auth.setUser(loginResponse.data)
+        context.redirect({ query: {} })
   }
 }
