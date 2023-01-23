@@ -10,7 +10,7 @@
         <div class="py-2"><h2 class="text-lg font-semibold mb-4 mt-2">{{$t('ISSUE_TO')}}:</h2></div>
         <div class="text-center small">
           <a :href="walletUrl"><i class="bi bi-app-indicator px-2"></i>{{$t('WALLET_APP')}}</a><br/>
-          <a :href="goToWalletUrl('walt.id')" target="_blank"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
+          <a href="#" @click="goToWalletUrl('walt.id')"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
         </div>
         <button style="background-color: #c01010" class="text-white px-4 py-2 inline-block font-semibold rounded mt-6 text-lg" @click="logout"><i class="bi bi-box-arrow-right"></i> Exit</button>
       </div>
@@ -39,11 +39,12 @@ export default {
     },
   },
   methods: {
-    goToWalletUrl (walletId) {
+    async goToWalletUrl (walletId) {
       const params = { "walletId": walletId, "isPreAuthorized": true, "userPin": null }
-      return `/ghent/portal/issue/${this.personalID}/EnergyLoan?${Object.keys(params)
+      const walletUrl = await this.$axios.$get(`/ghent/portal/issue/${this.personalID}/EnergyLoan?${Object.keys(params)
           .filter(k => params[k] != null)
-          .map(k => `${k}=${params[k]}`).join("&")}`
+          .map(k => `${k}=${params[k]}`).join("&")}`)
+      window.open(walletUrl)
     },
     logout() {
       this.$auth.logout()
