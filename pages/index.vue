@@ -171,12 +171,11 @@
           deze pagina.
         </p>
 
-        <a
-          href="index2.html"
+        <nuxt-link to="/Energielening"
           style="background-color: #009de0"
           class="text-white px-4 py-2 inline-block font-semibold rounded mt-6 text-lg"
-          >Vraag je energielening aan</a
-        >
+          >Vraag je energielening aan</nuxt-link>
+
       </div>
     </div>
   </div>

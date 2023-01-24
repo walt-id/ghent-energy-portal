@@ -64,8 +64,7 @@
               Request your VerifiableID at BOSA
             </h2>
             <p class="mb-4">
-              BOSA can issue you your VerifiableID. It will let you authenticate
-              yourself in a privacy preserving way.
+              BOSA can issue you your VerifiableID.
             </p>
             <a
               href="https://bosa.walt-test.cloud/GhentSignup"
@@ -104,7 +103,7 @@
               Request your Verifiable Credentials at the Federal Portal
             </h2>
             <p class="mb-4">
-              BOSA facilitates your access to your verifiable credentials. You
+              BOSA lets you obtain verifiable credentials from federal government services. You
               can authenticate with your VerifiableID.
             </p>
             <a
@@ -144,8 +143,8 @@
               Request your OCMWConfirmationDebtMediation at Social Welfare
             </h2>
             <p class="mb-4">
-              Social Welfare facilitates your access to your verifiable
-              credentials. You can authenticate with your VerifiableID.
+              At Social Welfare you can obtain your OCMWConfirmationDebtMediation verifiable
+              credential. You can authenticate with your VerifiableID.
             </p>
             <a
               href="#"
@@ -182,8 +181,7 @@
           <div>
             <h2 class="text-lg font-semibold mb-2">Request your Energy Loan</h2>
             <p class="mb-4">
-              ___ facilitates your access to your verifiable credentials. You
-              can authenticate with your VerifiableID.
+              Present the required verifiable credentials to us to obtain your Energy Loan approval.
             </p>
             <nuxt-link
               to="/EnergyLoan"
