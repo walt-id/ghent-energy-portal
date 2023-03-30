@@ -3,7 +3,7 @@
     <div class="fixed inset-0 -z-10 bg-image"></div>
     <div class="flex h-16 items-center mt-8 mb-4">
       <img class="object-contain h-16" src="../assets/img/logo.png"/>
-      <h1 class="text-4xl ml-4 font-bold">NEOM student enrollment</h1>
+      <h1 class="text-4xl ml-4 font-bold text-white">NEOM student enrollment</h1>
     </div>
     <nav class="mb-4">
       <ul class="flex space-x-4 text-semibold">

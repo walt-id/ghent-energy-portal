@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 h1, h2 {
-  color: #767676;
+  /*color: #767676;*/
 }
 body {
   font-size: 11pt;
