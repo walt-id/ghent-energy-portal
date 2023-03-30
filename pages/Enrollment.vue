@@ -58,7 +58,7 @@
                 bg-gray-300
                 text-gray-600
                 rounded
-              " href="https://bosa.walt-test.cloud/GhentSignup" target="_blank"
+              " href="https://onboarding.neom.walt-test.cloud/NeomSignup" target="_blank"
             >Request</a>
           </div>
         </li>
@@ -91,7 +91,7 @@
                 bg-gray-300
                 text-gray-600
                 rounded
-              " href="https://bosa.walt-test.cloud/GhentPortal" target="_blank"
+              " href="https://onboarding.neomwalt-test.cloud/NeomPortal" target="_blank"
             >Request</a>
           </div>
         </li>
