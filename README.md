@@ -24,7 +24,7 @@ $ yarn generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Ghent Demo hints:
+## NEOM Demo hints:
 
 ---
 **List current citizens in in-memory database:**

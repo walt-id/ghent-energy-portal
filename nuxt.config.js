@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Ghent Energy Portal',
+    title: 'NEOM student enrollment',
     htmlAttrs: {
       lang: 'en'
     },
