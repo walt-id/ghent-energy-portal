@@ -186,7 +186,7 @@
                 bg-gray-300
                 text-gray-600
                 rounded
-              " to="/EnergyLoan"
+              " to="/StudentEnrollment"
             >Apply
             </nuxt-link>
           </div>

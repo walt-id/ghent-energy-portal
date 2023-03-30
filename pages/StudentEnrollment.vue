@@ -2,7 +2,7 @@
 <div class="bg-white bg-opacity-90 py-8 px-4 rounded">
   <div class="max-w-3xl mx-auto py-12 bg-white px-8 rounded">
     <h1 class="text-2xl font-bold mb-4">Welcome {{ citizen.firstName }}!</h1>
-    
+
     <div>
       <div class="text-center"><h2 class="text-lg font-semibold mb-4 mt-2">Scan with your wallet, to claim your energy loan:</h2></div>
       <div class="text-center" :v-show="qr-code-visible">
@@ -18,11 +18,11 @@
   </div>
 </div>
 </template>
-	
+
 <script>
 import QRious from "qrious"
 export default {
-  name: 'EnergyLoan',
+  name: 'StudentEnrollment',
   middleware: [ 'portal-login', 'auth' ],
   data() { return {
     walletUrl: null
@@ -59,7 +59,7 @@ export default {
   }
 }
 </script>
-	
+
 <style scoped>
-	
+
 </style>
