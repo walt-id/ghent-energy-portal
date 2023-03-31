@@ -91,7 +91,7 @@
                 bg-gray-300
                 text-gray-600
                 rounded
-              " href="https://onboarding.neomwalt-test.cloud/NeomPortal" target="_blank"
+              " href="https://onboarding.neom.walt-test.cloud/NeomPortal" target="_blank"
             >Request</a>
           </div>
         </li>
