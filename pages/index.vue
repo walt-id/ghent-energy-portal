@@ -2,7 +2,7 @@
   <div>
     <div class="bg-white bg-opacity-90 py-8 px-4 rounded">
       <div class="max-w-3xl mx-auto py-12 bg-white px-8 rounded">
-        <h1 class="text-2xl font-bold mb-4">Mijn VerbouwLening</h1>
+        <h1 class="text-2xl font-bold mb-4">NEOM student enrollment</h1>
         <h2 class="text-lg font-semibold mb-4 mt-2">
           How to enroll as a student to NEOM? </h2>
 
