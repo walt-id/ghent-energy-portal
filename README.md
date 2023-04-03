@@ -29,7 +29,7 @@ For detailed explanation on how things work, check out the [documentation](https
 ---
 **List current citizens in in-memory database:**
 
-https://onboarding.neom.walt-test.cloud/ghent/citizens/list
+https://onboarding.neom.walt-test.cloud/neom/citizens/list
 
 ---
 

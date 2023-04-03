@@ -57,7 +57,7 @@ export default {
     '/issuer-api/': 'https://wallet.walt-test.cloud',
     '/onboarding-api/': 'https://wallet.walt-test.cloud',
     '/api/': 'https://wallet.walt-test.cloud',
-    '/ghent/': 'http://localhost:5555'
+    '/neom/': 'http://localhost:5555'
     //'/ghent/': 'https://neom.walt-test.cloud'
     //'/issuer-api/': 'http://localhost:8080/',
     //'/onboarding-api/': 'http://localhost:8080/',
@@ -116,8 +116,8 @@ export default {
         },
         user: false,
         endpoints: {
-          login: { url: '/ghent/portal/authorize/token', method: 'post' },
-          user: { url: '/ghent/portal/citizen', method: 'get' },
+          login: { url: '/neom/portal/authorize/token', method: 'post' },
+          user: { url: '/neom/portal/citizen', method: 'get' },
           logout: false
         }
       }

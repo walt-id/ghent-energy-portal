@@ -7,19 +7,19 @@
       <div class="mx-auto text-center"><h2 class="text-lg font-semibold mb-4 mt-2">Present with:</h2></div>
       <div class="text-center small mx-auto">
         <a :href="xDeviceInfo.url"><i class="bi bi-app-indicator px-2"></i>{{$t('WALLET_APP')}}</a><br/>
-        <a  :href="'/ghent/portal/authorize?webUrl='+webUrl"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
+        <a  :href="'/neom/portal/authorize?webUrl='+webUrl"><span><i class="bi bi-box-arrow-up-right px-2"></i>{{$t("GHENT_PORTAL.WEB_WALLET")}}</span></a>
       </div>
     </div>
   </div>
 </div>
 </template>
-	
+
 <script>
 import QRious from "qrious"
 export default {
   data() {
     return {
-     
+
     }
   },
   computed: {
@@ -28,7 +28,7 @@ export default {
     }
   },
   async asyncData ({ $axios, query }) {
-    const xDeviceInfo = await $axios.$get("/ghent/portal/authorize/xdevice")
+    const xDeviceInfo = await $axios.$get("/neom/portal/authorize/xdevice")
     return { xDeviceInfo }
   },
 	mounted() {
@@ -39,7 +39,7 @@ export default {
         size: 400
       })
     setInterval(async () => {
-      const verificationResult = await this.$axios.$get("/ghent/portal/authorize/isVerified?state="+this.xDeviceInfo.state)
+      const verificationResult = await this.$axios.$get("/neom/portal/authorize/isVerified?state="+this.xDeviceInfo.state)
       console.log("Verification result", verificationResult)
       if(verificationResult.verified) {
         window.location = verificationResult.url
@@ -48,7 +48,7 @@ export default {
   }
 }
 </script>
-	
+
 <style scoped>
-	
+
 </style>

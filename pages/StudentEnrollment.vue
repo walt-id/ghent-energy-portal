@@ -28,9 +28,9 @@ export default {
     walletUrl: null
   }},
 	async asyncData ({ $axios, query, $auth }) {
-    const citizen = await $axios.$get("/ghent/portal/citizen")
+    const citizen = await $axios.$get("/neom/portal/citizen")
     const params = { "walletId": "x-device", "isPreAuthorized": true, "userPin": null }
-    const walletUrl = await $axios.$get(`/ghent/portal/issue/${citizen.personalIdentifier}/EnergyLoan`, { params: params })
+    const walletUrl = await $axios.$get(`/neom/portal/issue/${citizen.personalIdentifier}/StudentEnrollment`, { params: params })
     return { citizen, walletUrl }
   },
   computed: {
@@ -41,7 +41,7 @@ export default {
   methods: {
     async goToWalletUrl (walletId) {
       const params = { "walletId": walletId, "isPreAuthorized": true, "userPin": null }
-      const walletUrl = await this.$axios.$get(`/ghent/portal/issue/${this.personalID}/EnergyLoan?${Object.keys(params)
+      const walletUrl = await this.$axios.$get(`/neom/portal/issue/${this.personalID}/StudentEnrollment?${Object.keys(params)
           .filter(k => params[k] != null)
           .map(k => `${k}=${params[k]}`).join("&")}`)
       window.open(walletUrl)
