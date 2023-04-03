@@ -116,8 +116,8 @@ export default {
         },
         user: false,
         endpoints: {
-          login: { url: '/neom/portal/authorize/token', method: 'post' },
-          user: { url: '/neom/portal/citizen', method: 'get' },
+          login: { url: '/student/portal/authorize/token', method: 'post' },
+          user: { url: '/student/portal/citizen', method: 'get' },
           logout: false
         }
       }
