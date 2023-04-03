@@ -4,7 +4,7 @@
     <h1 class="text-2xl font-bold mb-4">Welcome {{ citizen.firstName }}!</h1>
 
     <div>
-      <div class="text-center"><h2 class="text-lg font-semibold mb-4 mt-2">Scan with your wallet, to claim your energy loan:</h2></div>
+      <div class="text-center"><h2 class="text-lg font-semibold mb-4 mt-2">Scan with your wallet, to claim your student enrollment credential:</h2></div>
       <div class="text-center" :v-show="qr-code-visible">
         <canvas class="mx-auto" :id="'qr-code'" />
         <div class="py-2"><h2 class="text-lg font-semibold mb-4 mt-2">{{$t('ISSUE_TO')}}:</h2></div>
