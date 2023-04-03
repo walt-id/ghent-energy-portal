@@ -70,7 +70,7 @@ export default {
     locales: [
       { code: 'en', iso: 'en-US', file: 'en.js', flag: 'flag-en.svg' },
       { code: 'de', iso: 'de-DE', file: 'de.js', flag: 'flag-de.svg' },
-      { code: 'fr', iso: 'fr-FR', file: 'fr.js', flag: 'flag-fr.svg' },
+      { code: 'fr', iso: 'fr-FR', file: 'fr.js', flag: 'flag-fr.svg' }
     ],
     defaultLocale: 'en',
     strategy: 'no_prefix',
@@ -95,9 +95,9 @@ export default {
     postcss: {
       plugins: {
         tailwindcss: {},
-        autoprefixer: {},
-      },
-    },
+        autoprefixer: {}
+      }
+    }
   },
 
   ssr: false,
@@ -122,5 +122,5 @@ export default {
         }
       }
     }
-  },
+  }
 }
