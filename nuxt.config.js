@@ -57,7 +57,8 @@ export default {
     '/issuer-api/': 'https://wallet.walt-test.cloud',
     '/onboarding-api/': 'https://wallet.walt-test.cloud',
     '/api/': 'https://wallet.walt-test.cloud',
-    '/neom/': 'http://localhost:5555'
+    '/neom/': 'http://localhost:5555',
+    '/student/': 'http://localhost:5555'
     //'/ghent/': 'https://neom.walt-test.cloud'
     //'/issuer-api/': 'http://localhost:8080/',
     //'/onboarding-api/': 'http://localhost:8080/',
