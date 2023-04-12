@@ -1,0 +1,21 @@
+* qr code looks weird (check all issuance buttons etc., check configuration)
+* nested issuers in templates
+
+BOSA
+OCMW
+Stad Gent
+
+* Remove OpenBadgeCredential from requirements
+* Business requirement is to have all credentials to get an Energy Loan
+* Energy Loan page: show which credential types need to be presented (Shane to update?)
+* Error handling: if authorization failes due to missing credentials, don't redirect to empty page, show user-friendly error page
+
+
+
+openid://?scope=openid&claims=%7B%22vp_token%22%3A+%7B%22presentation_definition%22%3A+%7B%22format%22+%3A+null%2C+%22id%22+%3A+%221%22%2C+%22input_descriptors%22+%3A+%5B%7B%22constraints%22+%3A+%7B%22fields%22+%3A+%5B%7B%22filter%22+%3A+%7B%22const%22%3A+%22VerifiableId%22%7D%2C+%22id%22+%3A+null%2C+%22path%22+%3A+%5B%22%24.type%22%5D%2C+%22purpose%22+%3A+null%7D%5D%7D%2C+%22format%22+%3A+null%2C+%22group%22+%3A+null%2C+%22id%22+%3A+%221%22%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22schema%22+%3A+null%7D%5D%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22submission_requirements%22+%3A+null%7D%7D%7D&response_type=id_token&redirect_uri=https%3A%2F%2Fbosa.walt-test.cloud%2Fverifier-api%2Fdefault%2Fverify&state=ZztXl02NTOe6qanVqF9rOQ&nonce=ZztXl02NTOe6qanVqF9rOQ&client_id=https%3A%2F%2Fbosa.walt-test.cloud%2Fverifier-api%2Fdefault%2Fverify&response_mode=post
+
+
+openid://?scope=openid&claims=%7B%22vp_token%22%3A+%7B%22presentation_definition%22%3A+%7B%22format%22+%3A+null%2C+%22id%22+%3A+%221%22%2C+%22input_descriptors%22+%3A+%5B%7B%22constraints%22+%3A+%7B%22fields%22+%3A+%5B%7B%22filter%22+%3A+%7B%22const%22%3A+%22VerifiableId%22%7D%2C+%22id%22+%3A+null%2C+%22path%22+%3A+%5B%22%24.type%22%5D%2C+%22purpose%22+%3A+null%7D%5D%7D%2C+%22format%22+%3A+null%2C+%22group%22+%3A+null%2C+%22id%22+%3A+%221%22%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22schema%22+%3A+null%7D%2C+%7B%22constraints%22+%3A+%7B%22fields%22+%3A+%5B%7B%22filter%22+%3A+%7B%22const%22%3A+%22OpenBadgeCredential%22%7D%2C+%22id%22+%3A+null%2C+%22path%22+%3A+%5B%22%24.type%22%5D%2C+%22purpose%22+%3A+null%7D%5D%7D%2C+%22format%22+%3A+null%2C+%22group%22+%3A+null%2C+%22id%22+%3A+%222%22%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22schema%22+%3A+null%7D%2C+%7B%22constraints%22+%3A+%7B%22fields%22+%3A+%5B%7B%22filter%22+%3A+%7B%22const%22%3A+%22ProofOfResidence%22%7D%2C+%22id%22+%3A+null%2C+%22path%22+%3A+%5B%22%24.type%22%5D%2C+%22purpose%22+%3A+null%7D%5D%7D%2C+%22format%22+%3A+null%2C+%22group%22+%3A+null%2C+%22id%22+%3A+%223%22%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22schema%22+%3A+null%7D%5D%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22submission_requirements%22+%3A+null%7D%7D%7D&response_type=id_token&redirect_uri=https%3A%2F%2Fbosa.walt-test.cloud%2Fverifier-api%2Fdefault%2Fverify&state=hGBXUBaASQOQ533IXZgtlg&nonce=hGBXUBaASQOQ533IXZgtlg&client_id=https%3A%2F%2Fbosa.walt-test.cloud%2Fverifier-api%2Fdefault%2Fverify&response_mode=post
+
+
+openid://?scope=openid&claims=%7B%22vp_token%22%3A+%7B%22presentation_definition%22%3A+%7B%22format%22+%3A+null%2C+%22id%22+%3A+%221%22%2C+%22input_descriptors%22+%3A+%5B%7B%22constraints%22+%3A+%7B%22fields%22+%3A+%5B%7B%22filter%22+%3A+%7B%22const%22%3A+%22VerifiableId%22%7D%2C+%22id%22+%3A+null%2C+%22path%22+%3A+%5B%22%24.type%22%5D%2C+%22purpose%22+%3A+null%7D%5D%7D%2C+%22format%22+%3A+null%2C+%22group%22+%3A+null%2C+%22id%22+%3A+%221%22%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22schema%22+%3A+null%7D%5D%2C+%22name%22+%3A+null%2C+%22purpose%22+%3A+null%2C+%22submission_requirements%22+%3A+null%7D%7D%7D&response_type=id_token&redirect_uri=https%3A%2F%2Fbosa.walt-test.cloud%2Fverifier-api%2Fdefault%2Fverify&state=x25WZNPeRr6AJT64e1Ih8w&nonce=x25WZNPeRr6AJT64e1Ih8w&client_id=https%3A%2F%2Fbosa.walt-test.cloud%2Fverifier-api%2Fdefault%2Fverify&response_mode=post
