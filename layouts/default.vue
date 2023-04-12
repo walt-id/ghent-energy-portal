@@ -11,7 +11,7 @@
           <nuxt-link to="/">Home</nuxt-link>
         </li>
         <li class="underline bg-white bg-opacity-95 px-4 py-2">
-          <nuxt-link to="/Enrollment">Enroll as student</nuxt-link>
+          <nuxt-link to="/Enrollment">Enroll as EU student</nuxt-link>
         </li>
       </ul>
     </nav>
