@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div v-if="citizen && !citizen.euDiploma">
+    <div v-if="citizen && !citizen.euDiploma && !diplomaPresentationResult">
       <div class="text-center"><h2 class="text-lg font-semibold mb-4 mt-2">Scan with your wallet, to present your university diploma:</h2></div>
       <div class="text-center" :v-show="qr-code-visible">
         <canvas class="mx-auto" :id="'qr-code'" />
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div v-if="citizen && citizen.euDiploma">
+    <div v-if="citizen && citizen.euDiploma && !diplomaPresentationResult">
       <div class="text-center"><h2 class="text-lg font-semibold mb-4 mt-2">Scan with your wallet, to claim your student enrollment credential:</h2></div>
       <div class="text-center" :v-show="qr-code-visible">
         <canvas class="mx-auto" :id="'qr-code'" />
@@ -54,7 +54,21 @@
         </div>
       </div>
     </div>
-    <div class="text-center">
+
+    <div v-if="diplomaPresentationResult">
+      <div class="text-center"><h2 class="text-lg font-semibold mb-4 mt-2">EU Diploma verification result:</h2></div>
+      <div class="text-center">
+        <div class="text-center small">
+          <div v-for="value, key in diplomaPresentationResult.vps[0].verification_result.policyResults" :key="key">
+              {{ key }} <i :class="value.isSuccess ? 'bi bi-check' : 'bi bi-x'" :style="'color:' + (value.isSuccess ? 'green;' : 'red;')"></i>
+            </div>
+            <div class="text-middle">
+              <a href="/StudentEnrollment" style="background-color: blue" class="text-white px-4 py-2 inline-block font-semibold rounded mt-6 text-lg"><i class="bi bi-credit-card mx-2"></i>Issue enrollment credential</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-right">
       <button style="background-color: #c01010" class="text-white px-4 py-2 inline-block font-semibold rounded mt-6 text-lg" @click="logout"><i class="bi bi-box-arrow-right"></i> Exit</button>
     </div>
   </div>
@@ -68,11 +82,13 @@ export default {
   middleware: [ 'portal-login', 'auth' ],
   data() { return {
     walletUrl: null,
-    diplomaPresentationRequestInfo: null
+    diplomaPresentationRequestInfo: null,
+    diplomaPresentationResult: null
   }},
 	async asyncData ({ $axios, query, $auth }) {
     let walletUrl = null
     let diplomaPresentationRequestInfo = null
+    let diplomaPresentationResult = null
     const citizen = await $axios.$get("/student/portal/citizen")
     if(citizen.euDiploma) {
       const params = { "walletId": "x-device", "isPreAuthorized": true, "userPin": null }
@@ -81,7 +97,11 @@ export default {
       diplomaPresentationRequestInfo = await $axios.$get(`/student/portal/shareDiploma/xdevice?webUrl=${window.location.origin}`)
       walletUrl = diplomaPresentationRequestInfo.url
     }
-    return { citizen, walletUrl, diplomaPresentationRequestInfo }
+    console.log(query)
+    if(query.diplomaPresentationState != null) {
+      diplomaPresentationResult = await $axios.$get(`/student/portal/shareDiploma/verificationResult?state=${query.diplomaPresentationState}`)
+    }
+    return { citizen, walletUrl, diplomaPresentationRequestInfo, diplomaPresentationResult }
   },
   computed: {
     personalID() {
